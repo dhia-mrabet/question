@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question and Answer Box</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #question-box {
+            width: 300px;
+            padding: 10px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="question-box">
+        <form method="post" action="/">
+            <label for="question">Ask a question:</label>
+            <input type="text" id="question" name="question" required>
+            <br>
+            <button type="submit">Get Answer</button>
+        </form>
+        {% if question %}
+        <div>
+            <p>Question: {{ question }}</p>
+            <p>Answer: {{ answer }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
